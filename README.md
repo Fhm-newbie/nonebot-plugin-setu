@@ -5,6 +5,7 @@
 （原作者大佬不更新了自己尝试瞎改一下，大部分问题解决可以到原作者仓库的issue里找到）
 
 （推荐git clone到本地文件后再在bot.py添加插件，其他添加插件的方法不熟）
+（已适配nonebot2最新版本）
 
 
 #### 详细信息看[wiki](https://github.com/yuban10703/setu-nonebot2/wiki) 
