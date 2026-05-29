@@ -130,7 +130,7 @@ driver.on_startup(pixivToken.main)
 class Pixiv:
     def __init__(self, config: GetSetuConfig):
         self.config = config
-        self.Client = httpx.AsyncClient(proxies=setu_config.proxies)
+        self.Client = httpx.AsyncClient(proxy=setu_config.proxies)
 
     async def get(self):  # p站热度榜
         tags = self.config.tags
