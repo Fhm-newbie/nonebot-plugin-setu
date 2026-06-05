@@ -1,21 +1,28 @@
-[tool.poetry]
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
 name = "nonebot-plugin-setu"
 version = "0.1.0"
 description = "SetuBot"
-authors = []
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "YourName" }
+]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-nonebot2 = "^2.0.0.a1"
-nb-cli = "^0.1.0"
+dependencies = [
+    "nonebot2>=2.5.0",
+    "pydantic>=2.0.0",
+    "tinydb>=4.0.0",        # TinyDB 数据库
+    "tinyrecord>=0.2.0",    # TinyDB 的事务支持
+    "tenacity>=8.0.0",      # 重试机制库
+    "Pillow>=9.0.0",        # 图片处理库
+    "httpx[socks]>=0.25.0",
+]
 
-[tool.poetry.dev-dependencies]
-nonebot-test = "^0.1.0"
-
-[nonebot.plugins]
-plugins = ["nonebot_plugin_apscheduler"]
-plugin_dirs = ["src/plugins"]
-
-[build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+[tool.nonebot]
+# 需要用户手动改 database/DB/config，推荐走 plugin_dirs 模式（本地插件）
+plugins = []
+plugin_dirs = ["nonebot_plugin_setu"]
